@@ -11,12 +11,14 @@
     <button type="submit">Generate Speech</button>
   </form>
 
-  <% if (audio) { %>
-    <h3>Generated Audio:</h3>
-    <audio controls>
-      <source src="<%= audio %>" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  <% } %>
+<% if (audio) { %>
+  <h3>Generated Audio:</h3>
+  <audio controls>
+    <source src="<%= audio %>" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+<% } %>
+
+
 </body>
 </html>

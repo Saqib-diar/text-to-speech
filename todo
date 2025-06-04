@@ -1,0 +1,10 @@
+BEFORE:
+You downloaded audio from ElevenLabs.
+Wrote it to a physical file like public/output.mp3.
+Served that file in HTML via <audio src="/output.mp3">.
+
+NOW:
+You stream the audio directly from ElevenLabs.
+Convert it to base64 in memory.
+Inject it into the <audio> tag as a data URI (no file needed).
+
