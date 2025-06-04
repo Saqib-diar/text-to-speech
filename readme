@@ -1,0 +1,20 @@
+# Text-to-Speech with ElevenLabs API
+
+A simple Node.js app using ElevenLabs API to convert text into speech.
+
+## Features
+
+- HTML form to enter text
+- Server-side audio generation
+- Audio player to listen directly in the browser
+- Uses `axios`, `convict`, `ejs`, and `express`
+
+## Setup
+
+```bash
+git clone ...
+cd textToVoice
+npm install
+cp .env.example .env
+# Add your ElevenLabs API key to .env
+node app.js
