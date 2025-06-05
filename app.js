@@ -6,14 +6,14 @@ const axios = require("axios");
 // const path = require("path");
 const config = require('./config/config') //convict read from process.env
 
-const app = express();
+const app = express()
 const PORT = config.get('port');
 
 const ELEVENLABS_API_KEY = config.get('elevenlabs.apiKey');
 const VOICE_ID = config.get('elevenlabs.voiceId'); // Default voice ID
 
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(express.static("public"));
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {

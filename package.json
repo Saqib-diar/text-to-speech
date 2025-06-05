@@ -1,10 +1,21 @@
 {
+  "scripts": {
+    "dev": "nodemon app.js",
+    "dev:css": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/output.css --watch",
+    "build:css": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/output.css --minify"
+  },
   "dependencies": {
     "axios": "^1.9.0",
     "body-parser": "^2.2.0",
     "convict": "^6.2.4",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17"
   }
 }

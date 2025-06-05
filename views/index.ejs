@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Text to Speech with ElevenLabs</title>
+  <link href="/css/output.css" rel="stylesheet">
+
 </head>
-<body>
-  <h1>Text to Speech</h1>
-  <form action="/speak" method="POST">
-    <textarea name="text" rows="5" cols="50" placeholder="Enter your text here"></textarea><br>
-    <button type="submit">Generate Speech</button>
-  </form>
-
-<% if (audio) { %>
-  <h3>Generated Audio:</h3>
-  <audio controls>
-    <source src="<%= audio %>" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-<% } %>
-
-
+<body class="bg-gray-100 min-h-screen">
+  <div class="flex flex-col items-center justify-center m-5">
+    <h1 class="text-2xl font-bold m-4">Text to Speech</h1>
+    <form action="/speak" method="POST" class="flex flex-col items-center">
+    <textarea name="text" rows="5" cols="50" placeholder="Enter your text here" class="border p-2 m-4"></textarea><br>
+    <button type="submit" class="bg-blue-500 rounded-lg px-4 py-2 text-white font-semibold">Generate Speech</button>
+    </form>
+  </div>
+  <% if (audio) { %>
+    <div class="flex flex-col justify-center items-center">
+      <h3>Generated Audio:</h3>
+      <audio controls>
+        <source src="<%= audio %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  <% } %>
 </body>
 </html>
