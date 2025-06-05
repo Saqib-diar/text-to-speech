@@ -87,7 +87,7 @@ app.post('/speak', async (req, res) => {
     // Convert audio to base64 and send to frontend directly
     const base64Audio = Buffer.from(response.data).toString('base64');
 
-    res.render('index', { audio: `data:audio/mpeg;base64,${base64Audio}` });
+    res.render('index', {text, audio: `data:audio/mpeg;base64,${base64Audio}` });
 
   } catch (err) {
     const buffer = err.response?.data;
