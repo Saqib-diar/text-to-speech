@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Text to Speech with ElevenLabs</title>
   <link href="/css/output.css" rel="stylesheet">
 
 </head>
+
 <body class="bg-gray-100 min-h-screen">
   <div class="flex flex-col items-center justify-center m-5">
     <h1 class="text-2xl font-bold m-4">Text to Speech</h1>
-    <form action="/speak" method="POST" class="flex flex-col items-center">
-    <textarea name="text" rows="5" cols="50" placeholder="Enter your text here" class="border p-2 m-4"><%= typeof text !== 'undefined' ? text : '' %></textarea><br>
-    <button type="submit" class="bg-blue-500 rounded-lg px-4 py-2 text-white font-semibold">Generate Speech</button>
-    </form>
-  </div>
-  <% if (audio) { %>
-    <div class="flex flex-col justify-center items-center">
-      <h3>Generated Audio:</h3>
-      <audio controls>
-        <source src="<%= audio %>" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <div class="flex flex-col items-start gap-7">
+      <form action="/speak" method="POST">
+        <div class="flex flex-col items-end gap-4">
+          <textarea name="text" rows="5" cols="50" placeholder="Enter your text here" class="border p-2"><%= typeof text !== 'undefined' ? text : '' %></textarea>
+          <button type="submit" class="bg-blue-500 rounded-lg px-4 py-2 text-white font-semibold">
+            Generate Speech
+          </button>
+        </div>
+      </form>
+
+      <% if (audio) { %>
+        <div class="flex flex-col gap-4">
+          <h3 class="text-2xl font-semibold m-2">Generated Audio:</h3>
+          <audio controls class="bg-black rounded">
+            <source src="<%= audio %>" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      <% } %>
     </div>
-  <% } %>
+  </div>
 </body>
+
 </html>
